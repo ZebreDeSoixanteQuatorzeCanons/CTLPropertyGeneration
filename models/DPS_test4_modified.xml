@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<TURTLEGMODELING version="4.0 beta" ANIMATE_INTERACTIVE_SIMULATION="true" ACTIVATE_PENALTIES="true" UPDATE_INFORMATION_DIPLO_SIM="true" ANIMATE_WITH_INFO_DIPLO_SIM="true" OPEN_DIAG_DIPLO_SIM="false" LAST_SELECTED_MAIN_TAB="1" LAST_SELECTED_SUB_TAB="0" TAGS="deactivated root regulatePositionAndHeading getUserSetpoint sendActuatorsSetpoint computeActuatorsSetpoint getSensorsData" SHOW_TAGS="true" REMOVE_NETWORKING="true">
+<TURTLEGMODELING version="4.0 beta" ANIMATE_INTERACTIVE_SIMULATION="true" ACTIVATE_PENALTIES="true" UPDATE_INFORMATION_DIPLO_SIM="true" ANIMATE_WITH_INFO_DIPLO_SIM="true" OPEN_DIAG_DIPLO_SIM="false" LAST_SELECTED_MAIN_TAB="2" LAST_SELECTED_SUB_TAB="0" TAGS="deactivated root regulatePositionAndHeading getUserSetpoint sendActuatorsSetpoint computeActuatorsSetpoint getSensorsData" SHOW_TAGS="true" REMOVE_NETWORKING="true">
 <AISuggestions>
 </AISuggestions>
 <SPECIFICATION><![CDATA[A ship at sea is subject to strong environmental forces (wind, current, swell, etc.). In order to allow them to maintain a predefined position and course, some vessels are equipped with dynamic positioning systems (DPS). The system to design is a DPS consisting of two subsystems:
@@ -908,7 +908,7 @@ This DPS will be installed on a ship equipped with the following sensors: a prop
 <attackTreeNode data="" />
 <violatedAction data="" />
 <referenceElements data="" />
-<coverage data="Covered" />
+<coverage data="Not verified" />
 </extraparam>
 </COMPONENT>
 
@@ -1019,7 +1019,7 @@ This DPS will be installed on a ship equipped with the following sensors: a prop
 <attackTreeNode data="" />
 <violatedAction data="" />
 <referenceElements data="" />
-<coverage data="Covered" />
+<coverage data="Not verified" />
 </extraparam>
 </COMPONENT>
 
@@ -1085,7 +1085,7 @@ This DPS will be installed on a ship equipped with the following sensors: a prop
 <attackTreeNode data="" />
 <violatedAction data="" />
 <referenceElements data="" />
-<coverage data="Covered" />
+<coverage data="Not verified" />
 </extraparam>
 </COMPONENT>
 
@@ -1152,7 +1152,7 @@ This DPS will be installed on a ship equipped with the following sensors: a prop
 <attackTreeNode data="" />
 <violatedAction data="" />
 <referenceElements data="" />
-<coverage data="Covered" />
+<coverage data="Not verified" />
 </extraparam>
 </COMPONENT>
 
@@ -1219,7 +1219,7 @@ This DPS will be installed on a ship equipped with the following sensors: a prop
 <attackTreeNode data="" />
 <violatedAction data="" />
 <referenceElements data="" />
-<coverage data="Covered" />
+<coverage data="Not verified" />
 </extraparam>
 </COMPONENT>
 
@@ -1287,7 +1287,7 @@ This DPS will be installed on a ship equipped with the following sensors: a prop
 <attackTreeNode data="" />
 <violatedAction data="" />
 <referenceElements data="" />
-<coverage data="Covered" />
+<coverage data="Not verified" />
 </extraparam>
 </COMPONENT>
 
@@ -1480,7 +1480,7 @@ This DPS will be installed on a ship equipped with the following sensors: a prop
 <MainCode value="}"/>
 <Optimized value="true" />
 <considerTimingOperators value="true" />
-<Validated value="AzimuthThrusters;BowThrusters;Anemometer;IMU;Compass;User;DPS;GNSSReceiver;" />
+<Validated value="" />
 <Ignored value="" />
 
 <CONNECTOR type="5002" id="834" index="0" uid="ff353d8c-1f77-4023-a30f-db275b75aeae" >
@@ -1811,11 +1811,11 @@ A[] (!(DPS.sendingActuatorSetpoints) or (DPS.windSpeed==Anemometer.windSpeed &am
 
 <COMPONENT type="303" id="982" index="14" uid="2f9786c7-feb1-4c7c-aa06-78a754e1087d" >
 <cdparam x="134" y="1132" />
-<sizeparam width="817" height="45" minWidth="80" minHeight="10" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<sizeparam width="1011" height="45" minWidth="80" minHeight="10" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
 <cdrectangleparam minX="10" maxX="3000" minY="10" maxY="2000" />
 <infoparam name="pragma_6_Decision" value="
-A[] (!(DPS.headingSetpoint==User.headingSetpoint) or (DPS.posXSetpoint==User.posXSetpoint &amp;&amp; DPS.posYSetpoint==User.posYSetpoint))
+A[] (!(DPS.sendingActuatorSetpoints) or (DPS.headingSetpoint==User.headingSetpoint &amp;&amp; DPS.posXSetpoint==User.posXSetpoint &amp;&amp; DPS.posYSetpoint==User.posYSetpoint))
 " />
 <new d="false" />
 <TGConnectingPoint num="0" id="966" />
@@ -1837,7 +1837,7 @@ A[] (!(DPS.headingSetpoint==User.headingSetpoint) or (DPS.posXSetpoint==User.pos
 <tags value="" />
 <extraparam>
 <Line value="" />
-<Line value="A[] (!(DPS.headingSetpoint==User.headingSetpoint) or (DPS.posXSetpoint==User.posXSetpoint &amp;&amp; DPS.posYSetpoint==User.posYSetpoint))" />
+<Line value="A[] (!(DPS.sendingActuatorSetpoints) or (DPS.headingSetpoint==User.headingSetpoint &amp;&amp; DPS.posXSetpoint==User.posXSetpoint &amp;&amp; DPS.posYSetpoint==User.posYSetpoint))" />
 </extraparam>
 </COMPONENT>
 
@@ -2479,16 +2479,16 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </AVATARBlockDiagramPanel>
 
 <AVATARStateMachineDiagramPanel name="DPS" minX="10" maxX="2500" minY="10" maxY="1500" zoom="1.0" >
-<CONNECTOR type="5102" id="2878" index="0" uid="6b76f3ab-318f-47db-9d9c-6ca31eca4294" >
+<CONNECTOR type="5102" id="1410" index="0" uid="6b76f3ab-318f-47db-9d9c-6ca31eca4294" >
 <cdparam x="407" y="700" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
-<TGConnectingPoint num="0" id="2882" />
-<TGConnectingPoint num="1" id="2883" />
-<TGConnectingPoint num="2" id="2884" />
-<TGConnectingPoint num="3" id="2892" />
-<TGConnectingPoint num="4" id="2885" />
-<P1  x="407" y="700" id="2862" />
+<TGConnectingPoint num="0" id="1405" />
+<TGConnectingPoint num="1" id="1406" />
+<TGConnectingPoint num="2" id="1407" />
+<TGConnectingPoint num="3" id="1408" />
+<TGConnectingPoint num="4" id="1409" />
+<P1  x="407" y="700" id="1489" />
 <P2  x="253" y="252" id="1700" />
 <Point x="407" y="720" />
 <Point x="181" y="720" />
@@ -2497,59 +2497,59 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <tags value="" />
-</CONNECTOR><SUBCOMPONENT type="-1" id="2879" index="24" uid="208daadf-403e-443c-a963-1c1c1c967e6f" >
-<father id="2878" num="0" />
+</CONNECTOR><SUBCOMPONENT type="-1" id="1396" index="24" uid="208daadf-403e-443c-a963-1c1c1c967e6f" >
+<father id="1410" num="0" />
 <cdparam x="407" y="720" />
-<sizeparam width="8" height="8" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<sizeparam width="8" height="8" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="point " value="null" />
 <new d="false" />
 <tags value="" />
 </SUBCOMPONENT>
-<SUBCOMPONENT type="-1" id="2880" index="25" uid="35ff2e9b-0a93-4e20-bd2e-6ef4c3b1fdec" >
-<father id="2878" num="1" />
+<SUBCOMPONENT type="-1" id="1397" index="25" uid="35ff2e9b-0a93-4e20-bd2e-6ef4c3b1fdec" >
+<father id="1410" num="1" />
 <cdparam x="181" y="720" />
-<sizeparam width="8" height="8" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<sizeparam width="8" height="8" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="point " value="null" />
 <new d="false" />
 <tags value="" />
 </SUBCOMPONENT>
-<SUBCOMPONENT type="-1" id="2891" index="26" uid="dc6a96aa-2051-4f8d-a6b4-d5ea52d7de01" >
-<father id="2878" num="2" />
+<SUBCOMPONENT type="-1" id="1398" index="26" uid="dc6a96aa-2051-4f8d-a6b4-d5ea52d7de01" >
+<father id="1410" num="2" />
 <cdparam x="181" y="232" />
-<sizeparam width="8" height="8" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<sizeparam width="8" height="8" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="point " value="null" />
 <new d="false" />
 <tags value="" />
 </SUBCOMPONENT>
-<SUBCOMPONENT type="-1" id="2881" index="27" uid="58d83e17-fc1b-45bb-9adf-3d11906aebb1" >
-<father id="2878" num="3" />
+<SUBCOMPONENT type="-1" id="1399" index="27" uid="58d83e17-fc1b-45bb-9adf-3d11906aebb1" >
+<father id="1410" num="3" />
 <cdparam x="233" y="232" />
-<sizeparam width="8" height="8" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<sizeparam width="8" height="8" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="point " value="null" />
 <new d="false" />
 <tags value="" />
 </SUBCOMPONENT>
-<SUBCOMPONENT type="-1" id="2886" index="28" uid="c8ae0f72-f52b-4e19-bce9-7cc3c2cfad59" >
-<father id="2878" num="4" />
+<SUBCOMPONENT type="-1" id="1404" index="28" uid="c8ae0f72-f52b-4e19-bce9-7cc3c2cfad59" >
+<father id="1410" num="4" />
 <cdparam x="330" y="476" />
-<sizeparam width="50" height="25" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<sizeparam width="50" height="25" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
 <enabled value="true" />
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="List of all parameters of an Avatar SMD transition" value="" />
 <new d="false" />
-<TGConnectingPoint num="0" id="2887" />
-<TGConnectingPoint num="1" id="2888" />
-<TGConnectingPoint num="2" id="2889" />
-<TGConnectingPoint num="3" id="2890" />
+<TGConnectingPoint num="0" id="1400" />
+<TGConnectingPoint num="1" id="1401" />
+<TGConnectingPoint num="2" id="1402" />
+<TGConnectingPoint num="3" id="1403" />
 <tags value="" />
 <extraparam>
 <guard value="[ ]" enabled="true"/>
@@ -2564,29 +2564,29 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<CONNECTOR type="5102" id="2871" index="1" uid="765c14f4-f4b9-4498-8c85-68af426d0d95" >
+<CONNECTOR type="5102" id="1417" index="1" uid="765c14f4-f4b9-4498-8c85-68af426d0d95" >
 <cdparam x="407" y="654" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
-<TGConnectingPoint num="0" id="2872" />
-<P1  x="407" y="654" id="2844" />
-<P2  x="407" y="670" id="2861" />
+<TGConnectingPoint num="0" id="1416" />
+<P1  x="407" y="654" id="1500" />
+<P2  x="407" y="670" id="1488" />
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <tags value="" />
-</CONNECTOR><SUBCOMPONENT type="-1" id="2873" index="29" uid="53eb23e1-a45d-4b3a-a1ae-215541c90664" >
-<father id="2871" num="0" />
+</CONNECTOR><SUBCOMPONENT type="-1" id="1415" index="29" uid="53eb23e1-a45d-4b3a-a1ae-215541c90664" >
+<father id="1417" num="0" />
 <cdparam x="402" y="666" />
-<sizeparam width="50" height="25" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<sizeparam width="50" height="25" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
 <enabled value="true" />
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="List of all parameters of an Avatar SMD transition" value="" />
 <new d="false" />
-<TGConnectingPoint num="0" id="2874" />
-<TGConnectingPoint num="1" id="2875" />
-<TGConnectingPoint num="2" id="2876" />
-<TGConnectingPoint num="3" id="2877" />
+<TGConnectingPoint num="0" id="1411" />
+<TGConnectingPoint num="1" id="1412" />
+<TGConnectingPoint num="2" id="1413" />
+<TGConnectingPoint num="3" id="1414" />
 <tags value="" />
 <extraparam>
 <guard value="[ ]" enabled="true"/>
@@ -2601,50 +2601,29 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<COMPONENT type="5103" id="2860" index="2" uid="03452d00-1d25-48d4-ac70-3e01a4d7fa17" >
-<cdparam x="334" y="675" />
-<sizeparam width="146" height="20" minWidth="30" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
-<hidden value="false" />
-<enabled value="true" />
-<cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
-<infoparam name="Send signal" value="bowSetpoint(bowThrust)" />
-<new d="false" />
-<TGConnectingPoint num="0" id="2861" />
-<TGConnectingPoint num="1" id="2862" />
-<TGConnectingPoint num="2" id="2863" />
-<TGConnectingPoint num="3" id="2864" />
-<TGConnectingPoint num="4" id="2865" />
-<TGConnectingPoint num="5" id="2866" />
-<TGConnectingPoint num="6" id="2867" />
-<TGConnectingPoint num="7" id="2868" />
-<TGConnectingPoint num="8" id="2869" />
-<TGConnectingPoint num="9" id="2870" />
-<tags value="" />
-</COMPONENT>
-
-<CONNECTOR type="5102" id="2853" index="3" uid="825a9a9f-977e-4b6e-a6ab-73f6c378ba93" >
+<CONNECTOR type="5102" id="1424" index="2" uid="825a9a9f-977e-4b6e-a6ab-73f6c378ba93" >
 <cdparam x="407" y="602" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
-<TGConnectingPoint num="0" id="2854" />
+<TGConnectingPoint num="0" id="1423" />
 <P1  x="407" y="602" id="1643" />
-<P2  x="407" y="624" id="2843" />
+<P2  x="407" y="624" id="1499" />
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <tags value="" />
-</CONNECTOR><SUBCOMPONENT type="-1" id="2855" index="30" uid="0ff28ebe-ba9e-4c3c-aaa9-93b45f8ccffb" >
-<father id="2853" num="0" />
+</CONNECTOR><SUBCOMPONENT type="-1" id="1422" index="30" uid="0ff28ebe-ba9e-4c3c-aaa9-93b45f8ccffb" >
+<father id="1424" num="0" />
 <cdparam x="408" y="610" />
-<sizeparam width="50" height="25" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<sizeparam width="50" height="25" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
 <enabled value="true" />
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="List of all parameters of an Avatar SMD transition" value="" />
 <new d="false" />
-<TGConnectingPoint num="0" id="2856" />
-<TGConnectingPoint num="1" id="2857" />
-<TGConnectingPoint num="2" id="2858" />
-<TGConnectingPoint num="3" id="2859" />
+<TGConnectingPoint num="0" id="1418" />
+<TGConnectingPoint num="1" id="1419" />
+<TGConnectingPoint num="2" id="1420" />
+<TGConnectingPoint num="3" id="1421" />
 <tags value="" />
 <extraparam>
 <guard value="[ ]" enabled="true"/>
@@ -2659,39 +2638,18 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<COMPONENT type="5103" id="2842" index="4" uid="0864f932-8a6e-4744-bb8e-9c9d8c9cf619" >
-<cdparam x="271" y="629" />
-<sizeparam width="273" height="20" minWidth="30" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
-<hidden value="false" />
-<enabled value="true" />
-<cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
-<infoparam name="Send signal" value="azimuthSetpoint(azimuthThrust, azimuthAngle)" />
-<new d="false" />
-<TGConnectingPoint num="0" id="2843" />
-<TGConnectingPoint num="1" id="2844" />
-<TGConnectingPoint num="2" id="2845" />
-<TGConnectingPoint num="3" id="2846" />
-<TGConnectingPoint num="4" id="2847" />
-<TGConnectingPoint num="5" id="2848" />
-<TGConnectingPoint num="6" id="2849" />
-<TGConnectingPoint num="7" id="2850" />
-<TGConnectingPoint num="8" id="2851" />
-<TGConnectingPoint num="9" id="2852" />
-<tags value="" />
-</COMPONENT>
-
-<CONNECTOR type="5102" id="1402" index="5" uid="ce50121a-e76f-4f6b-b815-b095376c0e7b" >
+<CONNECTOR type="5102" id="1431" index="3" uid="ce50121a-e76f-4f6b-b815-b095376c0e7b" >
 <cdparam x="383" y="385" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
-<TGConnectingPoint num="0" id="1401" />
-<P1  x="407" y="388" id="1489" />
+<TGConnectingPoint num="0" id="1430" />
+<P1  x="407" y="388" id="1511" />
 <P2  x="407" y="397" id="1678" />
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <tags value="" />
-</CONNECTOR><SUBCOMPONENT type="-1" id="1400" index="31" uid="58de9334-1c14-4055-8d8a-e3772850f786" >
-<father id="1402" num="0" />
+</CONNECTOR><SUBCOMPONENT type="-1" id="1429" index="31" uid="58de9334-1c14-4055-8d8a-e3772850f786" >
+<father id="1431" num="0" />
 <cdparam x="395" y="391" />
 <sizeparam width="50" height="25" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
@@ -2699,10 +2657,10 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="List of all parameters of an Avatar SMD transition" value="" />
 <new d="false" />
-<TGConnectingPoint num="0" id="1396" />
-<TGConnectingPoint num="1" id="1397" />
-<TGConnectingPoint num="2" id="1398" />
-<TGConnectingPoint num="3" id="1399" />
+<TGConnectingPoint num="0" id="1425" />
+<TGConnectingPoint num="1" id="1426" />
+<TGConnectingPoint num="2" id="1427" />
+<TGConnectingPoint num="3" id="1428" />
 <tags value="" />
 <extraparam>
 <guard value="[ ]" enabled="true"/>
@@ -2717,18 +2675,18 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<CONNECTOR type="5102" id="1409" index="6" uid="415b675a-5e89-448c-97ed-cd1a05bb1b48" >
+<CONNECTOR type="5102" id="1438" index="4" uid="415b675a-5e89-448c-97ed-cd1a05bb1b48" >
 <cdparam x="407" y="350" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
-<TGConnectingPoint num="0" id="1408" />
+<TGConnectingPoint num="0" id="1437" />
 <P1  x="407" y="350" id="1690" />
-<P2  x="407" y="358" id="1488" />
+<P2  x="407" y="358" id="1510" />
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <tags value="" />
-</CONNECTOR><SUBCOMPONENT type="-1" id="1407" index="32" uid="8d8e5253-3990-4755-b85a-685cc771449f" >
-<father id="1409" num="0" />
+</CONNECTOR><SUBCOMPONENT type="-1" id="1436" index="32" uid="8d8e5253-3990-4755-b85a-685cc771449f" >
+<father id="1438" num="0" />
 <cdparam x="395" y="352" />
 <sizeparam width="50" height="25" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
@@ -2736,10 +2694,10 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="List of all parameters of an Avatar SMD transition" value="" />
 <new d="false" />
-<TGConnectingPoint num="0" id="1403" />
-<TGConnectingPoint num="1" id="1404" />
-<TGConnectingPoint num="2" id="1405" />
-<TGConnectingPoint num="3" id="1406" />
+<TGConnectingPoint num="0" id="1432" />
+<TGConnectingPoint num="1" id="1433" />
+<TGConnectingPoint num="2" id="1434" />
+<TGConnectingPoint num="3" id="1435" />
 <tags value="" />
 <extraparam>
 <guard value="[ ]" enabled="true"/>
@@ -2754,18 +2712,18 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<CONNECTOR type="5102" id="1423" index="7" uid="60ece94b-402d-40b8-80b2-adbdd0b7f7dd" >
+<CONNECTOR type="5102" id="1445" index="5" uid="60ece94b-402d-40b8-80b2-adbdd0b7f7dd" >
 <cdparam x="407" y="303" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
-<TGConnectingPoint num="0" id="1422" />
+<TGConnectingPoint num="0" id="1444" />
 <P1  x="407" y="302" id="1738" />
 <P2  x="407" y="320" id="1689" />
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <tags value="" />
-</CONNECTOR><SUBCOMPONENT type="-1" id="1421" index="33" uid="2df6a35e-23a5-4a72-b935-dddfc2318dc3" >
-<father id="1423" num="0" />
+</CONNECTOR><SUBCOMPONENT type="-1" id="1443" index="33" uid="2df6a35e-23a5-4a72-b935-dddfc2318dc3" >
+<father id="1445" num="0" />
 <cdparam x="410" y="316" />
 <sizeparam width="50" height="25" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
@@ -2773,10 +2731,10 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="List of all parameters of an Avatar SMD transition" value="" />
 <new d="false" />
-<TGConnectingPoint num="0" id="1417" />
-<TGConnectingPoint num="1" id="1418" />
-<TGConnectingPoint num="2" id="1419" />
-<TGConnectingPoint num="3" id="1420" />
+<TGConnectingPoint num="0" id="1439" />
+<TGConnectingPoint num="1" id="1440" />
+<TGConnectingPoint num="2" id="1441" />
+<TGConnectingPoint num="3" id="1442" />
 <tags value="" />
 <extraparam>
 <guard value="[ ]" enabled="true"/>
@@ -2791,18 +2749,18 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<CONNECTOR type="5102" id="1430" index="8" uid="8d76bc7a-e1be-44bb-b9c6-1717a256365d" >
+<CONNECTOR type="5102" id="1452" index="6" uid="8d76bc7a-e1be-44bb-b9c6-1717a256365d" >
 <cdparam x="407" y="70" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
-<TGConnectingPoint num="0" id="1429" />
+<TGConnectingPoint num="0" id="1451" />
 <P1  x="407" y="70" id="1784" />
 <P2  x="407" y="102" id="1565" />
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <tags value="" />
-</CONNECTOR><SUBCOMPONENT type="-1" id="1428" index="34" uid="2993696b-4428-4c3e-9282-22c2be23120f" >
-<father id="1430" num="0" />
+</CONNECTOR><SUBCOMPONENT type="-1" id="1450" index="34" uid="2993696b-4428-4c3e-9282-22c2be23120f" >
+<father id="1452" num="0" />
 <cdparam x="410" y="106" />
 <sizeparam width="50" height="25" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
@@ -2810,10 +2768,10 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="List of all parameters of an Avatar SMD transition" value="" />
 <new d="false" />
-<TGConnectingPoint num="0" id="1424" />
-<TGConnectingPoint num="1" id="1425" />
-<TGConnectingPoint num="2" id="1426" />
-<TGConnectingPoint num="3" id="1427" />
+<TGConnectingPoint num="0" id="1446" />
+<TGConnectingPoint num="1" id="1447" />
+<TGConnectingPoint num="2" id="1448" />
+<TGConnectingPoint num="3" id="1449" />
 <tags value="" />
 <extraparam>
 <guard value="[ ]" enabled="true"/>
@@ -2828,18 +2786,18 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<CONNECTOR type="5102" id="1437" index="9" uid="af45aafb-fffa-41ef-981d-5a74e536b6de" >
+<CONNECTOR type="5102" id="1459" index="7" uid="af45aafb-fffa-41ef-981d-5a74e536b6de" >
 <cdparam x="413" y="193" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
-<TGConnectingPoint num="0" id="1436" />
+<TGConnectingPoint num="0" id="1458" />
 <P1  x="407" y="152" id="1570" />
 <P2  x="407" y="183" id="1773" />
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <tags value="" />
-</CONNECTOR><SUBCOMPONENT type="-1" id="1435" index="35" uid="f1da0262-6027-4a08-8ca4-381cc1790321" >
-<father id="1437" num="0" />
+</CONNECTOR><SUBCOMPONENT type="-1" id="1457" index="35" uid="f1da0262-6027-4a08-8ca4-381cc1790321" >
+<father id="1459" num="0" />
 <cdparam x="410" y="210" />
 <sizeparam width="50" height="25" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
@@ -2847,10 +2805,10 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="List of all parameters of an Avatar SMD transition" value="" />
 <new d="false" />
-<TGConnectingPoint num="0" id="1431" />
-<TGConnectingPoint num="1" id="1432" />
-<TGConnectingPoint num="2" id="1433" />
-<TGConnectingPoint num="3" id="1434" />
+<TGConnectingPoint num="0" id="1453" />
+<TGConnectingPoint num="1" id="1454" />
+<TGConnectingPoint num="2" id="1455" />
+<TGConnectingPoint num="3" id="1456" />
 <tags value="" />
 <extraparam>
 <guard value="[ ]" enabled="true"/>
@@ -2865,18 +2823,18 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<CONNECTOR type="5102" id="1444" index="10" uid="7fc0a2c8-3f20-4bb9-ac14-e0f39f6f0b32" >
+<CONNECTOR type="5102" id="1466" index="8" uid="7fc0a2c8-3f20-4bb9-ac14-e0f39f6f0b32" >
 <cdparam x="407" y="655" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
-<TGConnectingPoint num="0" id="1443" />
+<TGConnectingPoint num="0" id="1465" />
 <P1  x="407" y="525" id="1824" />
 <P2  x="407" y="552" id="1606" />
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <tags value="" />
-</CONNECTOR><SUBCOMPONENT type="-1" id="1442" index="36" uid="cba8a9ee-ef53-4c13-abb0-6192e1bfd876" >
-<father id="1444" num="0" />
+</CONNECTOR><SUBCOMPONENT type="-1" id="1464" index="36" uid="cba8a9ee-ef53-4c13-abb0-6192e1bfd876" >
+<father id="1466" num="0" />
 <cdparam x="407" y="664" />
 <sizeparam width="50" height="25" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
@@ -2884,10 +2842,10 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
 <infoparam name="List of all parameters of an Avatar SMD transition" value="" />
 <new d="false" />
-<TGConnectingPoint num="0" id="1438" />
-<TGConnectingPoint num="1" id="1439" />
-<TGConnectingPoint num="2" id="1440" />
-<TGConnectingPoint num="3" id="1441" />
+<TGConnectingPoint num="0" id="1460" />
+<TGConnectingPoint num="1" id="1461" />
+<TGConnectingPoint num="2" id="1462" />
+<TGConnectingPoint num="3" id="1463" />
 <tags value="" />
 <extraparam>
 <guard value="[ ]" enabled="true"/>
@@ -2902,7 +2860,7 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<CONNECTOR type="5102" id="1473" index="11" uid="89180bbe-deb7-48f3-a34d-f7ac56a2eead" >
+<CONNECTOR type="5102" id="1473" index="9" uid="89180bbe-deb7-48f3-a34d-f7ac56a2eead" >
 <cdparam x="407" y="213" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
@@ -2939,13 +2897,13 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<CONNECTOR type="5102" id="1480" index="12" uid="506fe3f7-a42a-4121-abd4-aa2eccb062b7" >
+<CONNECTOR type="5102" id="1480" index="10" uid="506fe3f7-a42a-4121-abd4-aa2eccb062b7" >
 <cdparam x="407" y="427" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
 <TGConnectingPoint num="0" id="1479" />
 <P1  x="407" y="427" id="1679" />
-<P2  x="407" y="432" id="1499" />
+<P2  x="407" y="432" id="1521" />
 <AutomaticDrawing  data="true" />
 <new d="false" />
 <tags value="" />
@@ -2976,12 +2934,12 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<CONNECTOR type="5102" id="1487" index="13" uid="54bf7d05-cef0-4436-8401-9488659f8c9d" >
+<CONNECTOR type="5102" id="1487" index="11" uid="54bf7d05-cef0-4436-8401-9488659f8c9d" >
 <cdparam x="408" y="475" />
 <sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <infoparam name="connector" value="null" />
 <TGConnectingPoint num="0" id="1486" />
-<P1  x="407" y="462" id="1500" />
+<P1  x="407" y="462" id="1522" />
 <P2  x="407" y="475" id="1787" />
 <AutomaticDrawing  data="true" />
 <new d="false" />
@@ -3013,13 +2971,13 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 </extraparam>
 </SUBCOMPONENT>
 
-<COMPONENT type="5104" id="1498" index="14" uid="1532a4d9-5303-45f3-9b79-8c70652d46a4" >
-<cdparam x="330" y="363" />
-<sizeparam width="155" height="20" minWidth="30" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<COMPONENT type="5103" id="1498" index="12" uid="03452d00-1d25-48d4-ac70-3e01a4d7fa17" >
+<cdparam x="334" y="675" />
+<sizeparam width="146" height="20" minWidth="30" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
 <enabled value="true" />
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
-<infoparam name="Receive signal" value="IMUData(roll, pitch, yaw)" />
+<infoparam name="Send signal" value="bowSetpoint(bowThrust)" />
 <new d="false" />
 <TGConnectingPoint num="0" id="1488" />
 <TGConnectingPoint num="1" id="1489" />
@@ -3034,13 +2992,13 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 <tags value="" />
 </COMPONENT>
 
-<COMPONENT type="5104" id="1509" index="15" uid="3897a875-0b2b-4e35-849b-96850c50e1f4" >
-<cdparam x="334" y="437" />
-<sizeparam width="147" height="20" minWidth="30" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<COMPONENT type="5103" id="1509" index="13" uid="0864f932-8a6e-4744-bb8e-9c9d8c9cf619" >
+<cdparam x="271" y="629" />
+<sizeparam width="273" height="20" minWidth="30" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
 <hidden value="false" />
 <enabled value="true" />
 <cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
-<infoparam name="Receive signal" value="compassData(heading)" />
+<infoparam name="Send signal" value="azimuthSetpoint(azimuthThrust, azimuthAngle)" />
 <new d="false" />
 <TGConnectingPoint num="0" id="1499" />
 <TGConnectingPoint num="1" id="1500" />
@@ -3052,6 +3010,48 @@ A&lt;&gt;  DPS.sendingActuatorSetpoints
 <TGConnectingPoint num="7" id="1506" />
 <TGConnectingPoint num="8" id="1507" />
 <TGConnectingPoint num="9" id="1508" />
+<tags value="" />
+</COMPONENT>
+
+<COMPONENT type="5104" id="1520" index="14" uid="1532a4d9-5303-45f3-9b79-8c70652d46a4" >
+<cdparam x="330" y="363" />
+<sizeparam width="155" height="20" minWidth="30" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<hidden value="false" />
+<enabled value="true" />
+<cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
+<infoparam name="Receive signal" value="IMUData(roll, pitch, yaw)" />
+<new d="false" />
+<TGConnectingPoint num="0" id="1510" />
+<TGConnectingPoint num="1" id="1511" />
+<TGConnectingPoint num="2" id="1512" />
+<TGConnectingPoint num="3" id="1513" />
+<TGConnectingPoint num="4" id="1514" />
+<TGConnectingPoint num="5" id="1515" />
+<TGConnectingPoint num="6" id="1516" />
+<TGConnectingPoint num="7" id="1517" />
+<TGConnectingPoint num="8" id="1518" />
+<TGConnectingPoint num="9" id="1519" />
+<tags value="" />
+</COMPONENT>
+
+<COMPONENT type="5104" id="1531" index="15" uid="3897a875-0b2b-4e35-849b-96850c50e1f4" >
+<cdparam x="334" y="437" />
+<sizeparam width="147" height="20" minWidth="30" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+<hidden value="false" />
+<enabled value="true" />
+<cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
+<infoparam name="Receive signal" value="compassData(heading)" />
+<new d="false" />
+<TGConnectingPoint num="0" id="1521" />
+<TGConnectingPoint num="1" id="1522" />
+<TGConnectingPoint num="2" id="1523" />
+<TGConnectingPoint num="3" id="1524" />
+<TGConnectingPoint num="4" id="1525" />
+<TGConnectingPoint num="5" id="1526" />
+<TGConnectingPoint num="6" id="1527" />
+<TGConnectingPoint num="7" id="1528" />
+<TGConnectingPoint num="8" id="1529" />
+<TGConnectingPoint num="9" id="1530" />
 <tags value="" />
 </COMPONENT>
 
